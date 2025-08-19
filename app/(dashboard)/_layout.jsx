@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 import { useColorScheme } from 'react-native'
 import { Colors } from '../../constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
+import UserOnly from '../../components/auth/UserOnly'
 
 
 const DashboardLayout = () => {
@@ -10,7 +11,7 @@ const DashboardLayout = () => {
 
     const theme = Colors[colorScheme] ?? Colors.light
   return (
-    <>
+    <UserOnly>
    <StatusBar value="auto"/>
    <Tabs screenOptions={{ headerShown : false,
     tabBarStyle : {
@@ -31,8 +32,7 @@ const DashboardLayout = () => {
         <Ionicons size={24} name={focused ? "create" : "create-outline"} color={focused ? theme.iconColorFocused : theme.iconColor}/>
     )}}/>
    </Tabs>
-
-    </>
+    </UserOnly>
   )
 }
 

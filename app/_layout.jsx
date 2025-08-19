@@ -3,6 +3,8 @@ import React from 'react'
 import { Slot, Stack } from 'expo-router'
 import { Colors } from '../constants/Colors'
 import { StatusBar } from 'expo-status-bar'
+import { UserProvider } from '../context/UserContext'
+import { BooksContextProvider } from '../context/BooksContext'
 
 const RootLayout = () => {
 
@@ -10,7 +12,8 @@ const RootLayout = () => {
     const theme =  Colors[colorScheme] ?? Colors.light   
 
   return (
-     <>
+     <UserProvider>
+      <BooksContextProvider>
      <StatusBar value="auto"/>
       <Stack screenOptions={{
         headerStyle : {backgroundColor : theme.navBackground},
@@ -22,7 +25,8 @@ const RootLayout = () => {
         <Stack.Screen name='about' options={{title : "About"}}/>
         <Stack.Screen name='contact' options={{title : "Contact", headerShown : false}} />
       </Stack>
-      </>
+      </BooksContextProvider>
+      </UserProvider>
   )
 }
 
