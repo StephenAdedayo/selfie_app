@@ -31,6 +31,8 @@ const DashboardLayout = () => {
     <Tabs.Screen name='create' options={{title : "Create", tabBarIcon : ({focused}) => (
         <Ionicons size={24} name={focused ? "create" : "create-outline"} color={focused ? theme.iconColorFocused : theme.iconColor}/>
     )}}/>
+
+    <Tabs.Screen name='books/[id]' options={{href : null}}/>
    </Tabs>
     </UserOnly>
   )
