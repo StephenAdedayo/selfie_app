@@ -8,12 +8,15 @@ const GuestOnly = ({children}) => {
     const {user, authChecked} = useUser()
     const router = useRouter()
     
+    // useffect runs to check if there is user and authchecked = true then sends the user back to profile page
     useEffect(() => {
      if(authChecked && user !== null){
         router.replace("/profile")
      }
     }, [user, authChecked])
-
+    
+    // if authchecked = false but there is user, show loader before routing to profile page
+    // i.e you are logged in, the authchecked won't be checked when you click on profile page
     if(!authChecked || user){
         return (
             <ThemedLoader />

@@ -1,4 +1,4 @@
-import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native'
+import { Keyboard, Platform, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native'
 
 import Spacer from "../../components/Spacer"
 import ThemedText from "../../components/ThemedText"
@@ -8,6 +8,7 @@ import ThemedTextInput from '../../components/ThemedTextInput'
 import ThemedButton from '../../components/ThemedButton'
 import { useBooks } from '../../hooks/useBooks'
 import { useRouter } from 'expo-router'
+import ThemedKeyBoardArea from '../../components/ThemedKeyBoardArea'
 
 const Create = () => {
 
@@ -40,8 +41,7 @@ const Create = () => {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-    <ThemedView style={styles.container}>
-
+         <ThemedKeyBoardArea safe={true} style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height" }>
       <ThemedText title={true} style={styles.heading}>
         Add a New Book
       </ThemedText>
@@ -68,7 +68,7 @@ const Create = () => {
      
 
        
-    </ThemedView>
+    </ThemedKeyBoardArea>
     </TouchableWithoutFeedback>
   )
 }

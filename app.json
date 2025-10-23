@@ -28,6 +28,19 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "db4bd4ee-212d-40a7-a721-13b3cc4c9eab"
+      }
+    },
+    "owner": "stephenadedayo",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/db4bd4ee-212d-40a7-a721-13b3cc4c9eab"
+    }
   }
 }

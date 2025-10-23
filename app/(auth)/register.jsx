@@ -1,4 +1,4 @@
-import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
+import { Keyboard, Platform, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import ThemedView from '../../components/ThemedView'
 import Spacer from '../../components/Spacer'
@@ -8,6 +8,7 @@ import ThemedButton from '../../components/ThemedButton'
 import ThemedTextInput from '../../components/ThemedTextInput'
 import { useUser } from '../../hooks/useUser'
 import { Colors } from '../../constants/Colors'
+import ThemedKeyBoardArea from '../../components/ThemedKeyBoardArea'
 
 const Register = () => {
 
@@ -31,7 +32,9 @@ const Register = () => {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-    <ThemedView style={styles.container}>
+        
+        
+     <ThemedKeyBoardArea safe={true} style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height" }>      
       <Spacer />
      
      <ThemedText title={true} style={styles.title}>Register for an Account</ThemedText>
@@ -51,7 +54,7 @@ const Register = () => {
       <Link href={'/login'}>
       <ThemedText style={{ textAlign : "center" }}>Login instead</ThemedText></Link>
 
-    </ThemedView>
+    </ThemedKeyBoardArea>
     </TouchableWithoutFeedback>
   )
 }

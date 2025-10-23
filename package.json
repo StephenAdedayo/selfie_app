@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
+    "eas-cli": "^16.17.4",
     "expo": "~53.0.20",
     "expo-constants": "~17.1.7",
     "expo-linking": "~7.1.7",
@@ -20,7 +21,8 @@
     "react-native-appwrite": "^0.11.0",
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
-    "react-native-url-polyfill": "^2.0.0"
+    "react-native-url-polyfill": "^2.0.0",
+    "expo-updates": "~0.28.17"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

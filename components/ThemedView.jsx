@@ -9,7 +9,8 @@ const ThemedView = ({style, safe= false, ...prop}) => {
  const theme = Colors[colorScheme] ?? Colors.light
   
 //  use safe = false for those pages that doesn't require a safeAreaview
- if(!safe) return ( <View style={[{backgroundColor : theme.background}, style]} {...prop} />
+ if(!safe) return ( 
+ <View style={[{backgroundColor : theme.background}, style]} {...prop} />
   )
 
 //   use for those view that requires a safeAreaview because not all pages require a safe area view

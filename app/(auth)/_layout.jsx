@@ -8,7 +8,7 @@ import GuestOnly from '../../components/auth/GuestOnly'
 const AuthLayout = () => {
 
     const {user} = useUser()
-    console.log(user);
+    // console.log(user);
     
 
   return (

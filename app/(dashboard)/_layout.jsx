@@ -32,6 +32,7 @@ const DashboardLayout = () => {
         <Ionicons size={24} name={focused ? "create" : "create-outline"} color={focused ? theme.iconColorFocused : theme.iconColor}/>
     )}}/>
 
+{/* href is to hide the tab option in the tab nav options */}
     <Tabs.Screen name='books/[id]' options={{href : null}}/>
    </Tabs>
     </UserOnly>
